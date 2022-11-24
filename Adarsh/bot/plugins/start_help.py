@@ -28,7 +28,7 @@ START_TEXT = """
 Hey {} 👋\n
 <code>I am Telegram File To Link Bot</code>\n
 <code>Use Help Command to Know how to Use me</code>\n
-**@Tellybots**"""
+**@Nkbots**"""
 
 HELP_TEXT = """
 ✮ Send Me Any File or Media\n
@@ -39,11 +39,11 @@ HELP_TEXT = """
 
 ABOUT_TEXT = """
 🤖 My Name : Telly File Stream Bot\n
-🚦 Version : <a href='https://telegram.me/tellybots'>3.0</a>\n
+🚦 Version : <a href='https://telegram.me/Nkbots'>3.0</a>\n
 💫 Source Code : <a href='https://t.me/tellybots_digital'>Click Here</a>\n
 🗃️ Library : <a href='https://pyrogram.org'>Click Here</a>\n
-👲 Developer : <a href='https://telegram.me/tellybots'>TellyBots</a>\n
-📦 Last Updated : <a href='https://telegram.me/tellybots'>[ 13-Jan-22 ] 09:00 AM</a>"""
+👲 Developer : <a href='https://telegram.me/Nkbots'>TellyBots</a>\n
+📦 Last Updated : <a href='https://telegram.me/Nkbots'>[ 13-Jan-22 ] 09:00 AM</a>"""
 
 TEXT = """Just Send Me Any Telegram Media To Get Started\n\nOr Use Below Buttons to Interact With Me"""
 
