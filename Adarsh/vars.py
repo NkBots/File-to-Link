@@ -13,12 +13,12 @@ class Var(object):
     API_HASH = str(getenv('API_HASH'))
     BOT_TOKEN = str(getenv('BOT_TOKEN'))
     name = str(getenv('SESSION_NAME', 'nkfiletolink'))
-    SLEEP_THRESHOLD = int(getenv('SLEEP_THRESHOLD', '60'))
-    WORKERS = int(getenv('WORKERS', '4'))
+    SLEEP_THRESHOLD = int(getenv('SLEEP_THRESHOLD', '20'))
+    WORKERS = int(getenv('WORKERS', '120'))
     BIN_CHANNEL = int(getenv('BIN_CHANNEL'))
     PORT = int(getenv('PORT', 8080))
     BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
-    PING_INTERVAL = int(environ.get("PING_INTERVAL", "20"))  # 20 minutes
+    PING_INTERVAL = int(environ.get("PING_INTERVAL", "5"))  # 20 minutes
     OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "").split())  
     NO_PORT = bool(getenv('NO_PORT', False))
     APP_NAME = None
@@ -30,11 +30,11 @@ class Var(object):
     else:
         ON_HEROKU = False
     FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.onrender.com'
-    #HAS_SSL=bool(getenv('HAS_SSL',False))
-    #if HAS_SSL:
-        #URL = "https://nkfiletolink.onrender.com/"
-   # else:
-        #URL = "http://nkfiletolink.onrender.com/"
+    HAS_SSL=bool(getenv('HAS_SSL',False))
+    if HAS_SSL:
+        URL = "https://nkfiletolink.onrender.com/"
+    else:
+        URL = "http://nkfiletolink.onrender.com/"
     DATABASE_URL = str(getenv('DATABASE_URL'))
     UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', None))
     BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001362659779")).split())) 
