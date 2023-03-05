@@ -1,6 +1,12 @@
 import os
 import math
 import time
+import os 
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup 
+from pyrogram import filters,emoji
+from pyrogram.types import Message
+from pyrogram import Client as HB
+import requests
 
 
 async def progress_for_pyrogram(
