@@ -5,7 +5,7 @@ import os
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup 
 from pyrogram import filters,emoji
 from pyrogram.types import Message
-from pyrogram import Client as HB
+from Adarsh.bot import StreamBot
 import requests
 
 
@@ -93,7 +93,7 @@ UPLOAD_START = " <bold>Upload STARTED...</bold>"
 from pytube import YouTube
 VIDEO_REGEX = r'(.*)youtube.com/(.*)[&|?]v=(?P<video>[^&]*)(.*)'
 PLAYLIST_REGEX = r'(.*)youtube.com/(.*)[&|?]list=(?P<playlist>[^&]*)(.*)'
-@HB.on_message(filters.regex(VIDEO_REGEX))
+@StreamBot.on_message(filters.regex(VIDEO_REGEX))
 async def ytdl(_, message):
    l = message.text.split()
    global var
@@ -142,7 +142,7 @@ import time
 start_time = time.time()
 
 
-@HB.on_callback_query()
+@StreamBot.on_callback_query()
 async def cb_data(bot, update):                     
     
     if update.data == 'high':
@@ -225,7 +225,7 @@ import re
 from pytube import YouTube
 from pytube import Playlist
 
-@HB.on_message(filters.text & filters.private)
+@StreamBot.on_message(filters.text & filters.private)
 async def ytdl(_, update):
    purl=update.text
    pyt = Playlist(purl)
