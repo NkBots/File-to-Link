@@ -119,7 +119,7 @@ async def start(b, m):
             except UserNotParticipant:
                 await b.send_message(
                     chat_id=m.chat.id,
-                    text="**ᴊᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴜsᴇ  ᴍᴇ..**\n\n**ᴅᴜᴇ ᴛᴏ ᴏᴠᴇʀʟᴏᴀᴅ ᴏɴʟʏ ᴄʜᴀɴɴᴇʟ sᴜʙsᴄʀɪʙᴇʀs ᴄᴀɴ ᴜsᴇ ᴍᴇ..!**",
+                    text="**ᴊᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴜsᴇ  ᴍᴇ..**\n\n**ᴅᴜᴇ ᴛᴏ ᴏᴠᴇʀʟᴏᴀᴅ ᴏɴʟʏ ᴄʜᴀɴɴᴇʟ sᴜʙsᴄʀɪʙᴇʀs ᴄᴀɴ ᴜsᴇ ᴍᴇ..!\n\nJoin @Nkbots, @Tellybotzz**",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
@@ -133,7 +133,7 @@ async def start(b, m):
             except Exception:
                 await b.send_message(
                     chat_id=m.chat.id,
-                    text="**Please Join My Update Channel or Try Again **",
+                    text="**Please Join My Update Channel or Try Again Join @Nkbots and @Tellybotzz**",
                     
                     disable_web_page_preview=True)
                 return
@@ -159,7 +159,7 @@ async def start(b, m):
             except UserNotParticipant:
                 await b.send_message(
                     chat_id=m.chat.id,
-                    text="**Join My Update Channel to Use me.**\n\n**Due to Overload Only Channel Subscribers can use me ..!**",
+                    text="**Join My Update Channel to Use me.**\n\n**Due to Overload Only Channel Subscribers can use me ..!\n\nJoin @NkBots and @Tellybotzz**",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
