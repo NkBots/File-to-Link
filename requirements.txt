@@ -10,3 +10,5 @@ requests
 psutil
 pyromod
 pyshorteners
+pytube
+requests
