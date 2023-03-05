@@ -7,7 +7,14 @@ from pyrogram import filters,emoji
 from pyrogram.types import Message
 from Adarsh.bot import StreamBot
 import requests
-
+import time
+from pytube import YouTube
+VIDEO_REGEX = r'(.*)youtube.com/(.*)[&|?]v=(?P<video>[^&]*)(.*)'
+PLAYLIST_REGEX = r'(.*)youtube.com/(.*)[&|?]list=(?P<playlist>[^&]*)(.*)'
+import pytube
+import re
+from pytube import YouTube
+from pytube import Playlist
 
 async def progress_for_pyrogram(
     current,
@@ -90,9 +97,6 @@ def TimeFormatter(milliseconds: int) -> str:
 UPLOAD_START = " <bold>Upload STARTED...</bold>"
 
 
-from pytube import YouTube
-VIDEO_REGEX = r'(.*)youtube.com/(.*)[&|?]v=(?P<video>[^&]*)(.*)'
-PLAYLIST_REGEX = r'(.*)youtube.com/(.*)[&|?]list=(?P<playlist>[^&]*)(.*)'
 @StreamBot.on_message(filters.regex(VIDEO_REGEX))
 async def ytdl(_, message):
    l = message.text.split()
@@ -119,7 +123,7 @@ async def ytdl(_, message):
    hd = f"{int(format_bytes(ythd.filesize)[0]):.2f}{format_bytes(ythd.filesize)[1]}"
    low = f"{int(format_bytes(ytlow.filesize)[0]):.2f}{format_bytes(ytlow.filesize)[1]}"
    
-   import requests
+   
    result_buttons2 = InlineKeyboardMarkup(
     [[
         InlineKeyboardButton('🎬720P ' +' ⭕️ '+ hd, callback_data='high'),
@@ -138,7 +142,6 @@ async def ytdl(_, message):
             quote=True,
     
     )
-import time
 start_time = time.time()
 
 
@@ -220,10 +223,7 @@ async def cb_data(bot, update):
     
     else:
         await update.message.delete()
-import pytube
-import re
-from pytube import YouTube
-from pytube import Playlist
+
 
 @StreamBot.on_message(filters.text & filters.private)
 async def ytdl(_, update):
