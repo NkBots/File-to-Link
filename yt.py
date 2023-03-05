@@ -200,7 +200,7 @@ async def cb_data(bot, update):
         await HB.send_photo(
             chat_id = update.message.chat.id, 
             photo=thumb,
-            caption="**JOIN @TELSABOTS**"
+            caption="**JOIN @Tellybotzz**"
         )
         await update.message.delete()    
 
@@ -210,18 +210,7 @@ async def cb_data(bot, update):
             disable_web_page_preview=True,
             reply_markup=START_BUTTONS
         )
-    elif update.data == "help":
-        await update.message.edit_text(
-            text=HELP_TEXT,
-            disable_web_page_preview=True,
-            reply_markup=HELP_BUTTONS
-        )
-    elif update.data == "about":
-        await update.message.edit_text(
-            text=ABOUT_TEXT,
-            disable_web_page_preview=True,
-            reply_markup=ABOUT_BUTTONS
-        )
+
     
     else:
         await update.message.delete()
@@ -240,7 +229,7 @@ async def ytdl(_, update):
     
     await  HB.send_video(
             chat_id = update.chat.id, 
-            caption=(f"⭕️ PLAYLIST : "+ pyt.title + "\n📥 DOWNLOADED " + "\n✅ JOIN @TELSABOTS" ),
+            caption=(f"⭕️ PLAYLIST : "+ pyt.title + "\n📥 DOWNLOADED " + "\n✅ JOIN @Tellybotzz" ),
             video = phd.download(),
             
         )
