@@ -3,9 +3,9 @@ import math
 import time
 import os 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup 
-from pyrogram import filters,emoji
+from pyrogram import Client, filters,emoji
 from pyrogram.types import Message
-from Adarsh.bot import StreamBot
+
 import requests
 import time
 from pytube import YouTube
@@ -15,7 +15,12 @@ import pytube
 import re
 from pytube import YouTube
 from pytube import Playlist
-
+StreamBot = Client(
+    "YOUTUBE Bot",
+    bot_token = os.environ["BOT_TOKEN"],
+    api_id = int(os.environ["API_ID"]),
+    api_hash = os.environ["API_HASH"]
+)  
 async def progress_for_pyrogram(
     current,
     total,
