@@ -153,8 +153,8 @@ async def channel_receive_handler(bot, broadcast):
         )
         await broadcast.edit(
             #chat_id=broadcast.chat.id,
-            #id=broadcast.id,
-            text=f'By @Tellybotzz',
+            id=broadcast.id,
+            text=f'By @Tellybotzz', broadcast.chat.id,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [InlineKeyboardButton("🎥 Watch Online", url=stream_link),
