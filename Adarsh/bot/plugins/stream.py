@@ -12,7 +12,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyshorteners import Shortener
 from Adarsh.utils.file_properties import get_name, get_hash, get_media_file_size
 db = Database(Var.DATABASE_URL, Var.name)
-
+from pyrogram.enums.parse_mode import ParseMode
 MY_PASS = os.environ.get("MY_PASS",None)
 pass_dict = {}
 pass_db = Database(Var.DATABASE_URL, "ag_passwords")
