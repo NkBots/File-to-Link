@@ -151,7 +151,7 @@ async def channel_receive_handler(bot, broadcast):
             text=f"**Cʜᴀɴɴᴇʟ Nᴀᴍᴇ:** `{broadcast.chat.title}`\n**Cʜᴀɴɴᴇʟ ID:** `{broadcast.chat.id}`\n**Rᴇǫᴜᴇsᴛ ᴜʀʟ:** {stream_link}",
             quote=True
         )
-        await bot.edit_message_reply_markup(
+        await bot.edit(
             chat_id=broadcast.chat.id,
             id=broadcast.id,
             reply_markup=InlineKeyboardMarkup(
