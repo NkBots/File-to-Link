@@ -153,7 +153,6 @@ async def channel_receive_handler(bot, broadcast):
         )
         await broadcast.edit(
             #chat_id=broadcast.chat.id,
-            id=broadcast.id,
             text=f'By @Tellybotzz',
             reply_markup=InlineKeyboardMarkup(
                 [
