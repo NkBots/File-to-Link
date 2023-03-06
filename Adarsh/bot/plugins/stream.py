@@ -132,17 +132,16 @@ async def private_receive_handler(c: Client, m: Message):
 
 
 @StreamBot.on_edited_message(filters.channel & ~filters.group & (filters.document | filters.video | filters.photo)  & ~filters.forwarded, group=-1)
-async def channel_receive_handler(bot, broadcast):
+async def channel_receive_handler(c, m):
     if MY_PASS:
-        check_pass = await pass_db.get_user_pass(broadcast.chat.id)
-        if check_pass == None:
-            await broadcast.reply_text("Login first using /login cmd \n don\'t know the pass? request it from developer!")
+        check_pass = await pass_db.get_user_pass(m.chat.id)
+        if check_pass== None:
+            await m.reply_text("Login first using /login cmd \nDon't know the password contact @ArjunVR_AVR")
             return
         if check_pass != MY_PASS:
-            await broadcast.reply_text("Wrong password, login again")
-            await pass_db.delete_user(broadcast.chat.id)
-            
+            await pass_db.delete_user(m.chat.id)
             return
+
 
     try:
 
