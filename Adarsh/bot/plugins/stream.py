@@ -131,7 +131,7 @@ async def private_receive_handler(c: Client, m: Message):
 
 
 
-@StreamBot.on_message(filters.channel & ~filters.group & (filters.document | filters.video | filters.photo)  & ~filters.forwarded, group=-1)
+@StreamBot.on_edited_message(filters.channel & ~filters.group & (filters.document | filters.video | filters.photo)  & ~filters.forwarded, group=-1)
 async def channel_receive_handler(bot, broadcast):
     if MY_PASS:
         check_pass = await pass_db.get_user_pass(broadcast.chat.id)
@@ -156,7 +156,7 @@ async def channel_receive_handler(bot, broadcast):
             quote=True
         )
         await bot.edit_message_reply_markup(
-            chat_id=m.chat.id,
+            chat_id=broadcast.chat.id,
             
             reply_markup=InlineKeyboardMarkup(
                 [
