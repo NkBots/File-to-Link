@@ -84,7 +84,7 @@ async def private_receive_handler(c: Client, m: Message):
     except FloodWait as e:
         print(f"Sleeping for {str(e.x)}s")
         await asyncio.sleep(e.x)
-        await c.send_message(chat_id=Var.BIN_CHANNEL, text=f"Gᴏᴛ FʟᴏᴏᴅWᴀɪᴛ ᴏғ {str(e.x)}s from {m.from_user.first_name}\n\n**𝚄𝚜𝚎𝚛 𝙸𝙳 :**, disable_web_page_preview=True)
+         #ᴏғ {str(e.x)}s from {m.from_user.first_name}\n\n**𝚄𝚜𝚎𝚛 𝙸𝙳 :**, disable_web_page_preview=True)
 
 
 
