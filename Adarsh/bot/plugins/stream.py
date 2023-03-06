@@ -76,7 +76,7 @@ async def private_receive_handler(c: Client, m: Message):
             text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link),
             
             quote=True,
-            parse_mide=ParseMode.HTML,
+            parse_mode=ParseMode.HTML,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🎥 Watch Online", url=stream_link), #Stream Link
                                                 InlineKeyboardButton('📩 Download link', url=online_link)]]) #Download Link
